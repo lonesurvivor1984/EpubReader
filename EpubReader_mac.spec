@@ -72,7 +72,7 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='EpubReader.app',
-
+    icon='forexe/epub.icns',
     bundle_identifier='com.epubreader.app',
     info_plist={
         'NSHighResolutionCapable': True,

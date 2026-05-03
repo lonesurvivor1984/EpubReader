@@ -1,0 +1,53 @@
+name: Build macOS (Intel x86_64)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-13  # macos-13 是 Intel x86_64，macos-14+ 是 Apple Silicon
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install PySide6 lxml chardet pyinstaller
+
+      - name: Convert icon to .icns
+        run: |
+          mkdir -p epub.iconset
+          sips -z 16   16   forexe/epub.ico --out epub.iconset/icon_16x16.png      || true
+          sips -z 32   32   forexe/epub.ico --out epub.iconset/icon_16x16@2x.png   || true
+          sips -z 32   32   forexe/epub.ico --out epub.iconset/icon_32x32.png      || true
+          sips -z 64   64   forexe/epub.ico --out epub.iconset/icon_32x32@2x.png   || true
+          sips -z 128  128  forexe/epub.ico --out epub.iconset/icon_128x128.png    || true
+          sips -z 256  256  forexe/epub.ico --out epub.iconset/icon_128x128@2x.png || true
+          sips -z 256  256  forexe/epub.ico --out epub.iconset/icon_256x256.png    || true
+          sips -z 512  512  forexe/epub.ico --out epub.iconset/icon_256x256@2x.png || true
+          iconutil -c icns epub.iconset -o forexe/epub.icns || true
+
+      - name: Build with PyInstaller
+        run: pyinstaller EpubReader_mac.spec --noconfirm
+
+      - name: Zip .app bundle
+        run: |
+          cd dist
+          zip -r EpubReader-macOS-intel.zip EpubReader.app
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EpubReader-macOS-intel
+          path: dist/EpubReader-macOS-intel.zip
+          retention-days: 30

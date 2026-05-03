@@ -1,0 +1,26 @@
+# Byte-compiled / optimized
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Data (runtime)
+data/*.json
+data/*.bak
+data/cache/
+
+# Build
+dist/
+build/
+*.spec
+
+# OS
+.DS_Store
+Thumbs.db

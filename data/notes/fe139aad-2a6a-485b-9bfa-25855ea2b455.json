@@ -1,0 +1,30 @@
+[
+  {
+    "id": "697876ab-d93b-4776-b8b0-f1e67b5c93cd",
+    "chapter_href": "Text/cover_page.xhtml",
+    "selected_text": "“大家小书”",
+    "note": "111111",
+    "created_at": "2026-04-23T02:26:19.885712+00:00"
+  },
+  {
+    "id": "b3a43759-49c2-4fc1-a3dc-3138037109f7",
+    "chapter_href": "Text/part0001.xhtml",
+    "selected_text": "“大家小书”出版在即",
+    "note": "1111111111",
+    "created_at": "2026-04-23T02:26:41.445410+00:00"
+  },
+  {
+    "id": "1f1de3f1-36f7-46e8-b7ac-63f92af0fb57",
+    "chapter_href": "Text/part0001.xhtml",
+    "selected_text": "“大家小书”，是一个很俏皮的名",
+    "note": "1111111111111111",
+    "created_at": "2026-04-23T02:32:39.572680+00:00"
+  },
+  {
+    "id": "b33c765f-0631-4b7e-8729-50389558f776",
+    "chapter_href": "Text/part0001.xhtml",
+    "selected_text": "“大家小书”，",
+    "note": "test",
+    "created_at": "2026-04-23T02:36:19.637181+00:00"
+  }
+]

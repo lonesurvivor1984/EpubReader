@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(timeout 40 \"./dist/EpubReader/EpubReader.exe\")",
+      "Bash(timeout 60 \"./dist/EpubReader/EpubReader.exe\")",
+      "Bash(timeout 50 \"./dist/EpubReader/EpubReader.exe\")",
+      "Bash(pyinstaller EpubReader.spec --noconfirm)",
+      "Bash(python -c \"from pathlib import Path; test_txt = Path\\('test_cover_svg.txt'\\); test_txt.write_text\\('test content', encoding='utf-8'\\); print\\(test_txt.exists\\(\\)\\)\")",
+      "Bash(python -c \"from PySide6.QtSvg import QSvgRenderer; from PySide6.QtCore import QByteArray; print\\('OK'\\)\")",
+      "Bash(python -c \"from app.core.txt_converter import convert_txt_to_epub; from pathlib import Path; p = Path\\('t.txt'\\); p.write_text\\('test'*100, encoding='utf-8'\\); out = convert_txt_to_epub\\(str\\(p\\), 'tout'\\); print\\(out\\); p.unlink\\(\\); import shutil; shutil.rmtree\\('tout'\\)\")",
+      "Bash(bash -c \"python test_cover.py 2>&1\")",
+      "Bash(/c/Users/dengk/AppData/Local/Programs/Python/Python314/python.exe test_cover.py)",
+      "Bash(/c/Users/dengk/AppData/Local/Programs/Python/Python314/python.exe d:/WorkGroup/VSCODE/Py_tools/EpubReader/test_cover.py)",
+      "Bash(python -c \"print\\('ok'\\)\")",
+      "Bash(python -c \"import os; os.environ['QT_QPA_PLATFORM']='offscreen'; from app.core.txt_converter import convert_txt_to_epub; print\\('import ok'\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python d:/WorkGroup/VSCODE/Py_tools/EpubReader/test_cover.py)",
+      "Bash(python d:/WorkGroup/VSCODE/Py_tools/EpubReader/test_qt.py)",
+      "Bash(python test_qt.py)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(python -m py_compile test_qt.py)",
+      "Bash(python t2.py)",
+      "Bash(python t3.py)",
+      "Bash(python -m py_compile app/ui/bookshelf.py)",
+      "Bash(python -m py_compile app/ui/main_window.py)",
+      "Bash(python -m py_compile app/core/txt_converter.py)"
+    ]
+  }
+}

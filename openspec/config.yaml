@@ -1,0 +1,20 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Python, PySide6 (Qt6), QtWebEngine (Chromium), lxml
+  Architecture: layered — CLI → Application → Domain → Infrastructure → UI
+  Domain models are pure Python (no framework dependencies)
+  Data persistence: JSON files with atomic writes
+  EPUB resources served via embedded local HTTP server (not temp files)
+  Target: cross-platform desktop app, launched from command line
+  Publishing: PyInstaller → native installer (Inno Setup / dmg / AppImage)
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours

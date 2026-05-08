@@ -36,6 +36,7 @@ body {
     line-height: 1.8 !important;
     max-width: 800px !important;
     margin: 0 auto !important;
+    text-align: justify !important;
 }
 img {
     max-width: 100% !important;
@@ -44,6 +45,7 @@ img {
 p {
     text-indent: 2em !important;
     margin: 0.5em 0 !important;
+    text-align: justify !important;
 }
 div[style*="page-break"],
 div.pagebreak,
